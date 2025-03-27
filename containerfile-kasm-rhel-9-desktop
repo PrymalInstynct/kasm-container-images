@@ -1,5 +1,5 @@
-ARG BASE_TAG="develop"
-ARG BASE_IMAGE="core-rhel-9"
+ARG BASE_TAG="dev"
+ARG BASE_IMAGE="kasm-rhel-9-base"
 FROM $BASE_IMAGE:$BASE_TAG
 
 USER root

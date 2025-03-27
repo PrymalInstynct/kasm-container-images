@@ -1,6 +1,6 @@
-ARG BASE_TAG="develop"
-ARG BASE_IMAGE="core-rhel-9"
-FROM docker.io/library/$BASE_IMAGE:$BASE_TAG
+ARG BASE_TAG="dev"
+ARG BASE_IMAGE="kasm-rhel-9-base"
+FROM $BASE_IMAGE:$BASE_TAG
 
 ENV HOME=/home/kasm-default-profile
 ENV STARTUPDIR=/dockerstartup
