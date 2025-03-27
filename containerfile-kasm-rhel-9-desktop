@@ -23,13 +23,9 @@ ENV SKIP_CLEAN=true \
                   /rhel9/install/remmina/install_remmina.sh \
                   /rhel9/install/only_office/install_only_office.sh \
                   /rhel9/install/gimp/install_gimp.sh \
-                  /rhel9/install/zoom/install_zoom.sh \
-                  /rhel9/install/obs/install_obs.sh \
                   /rhel9/install/ansible/install_ansible.sh \
                   /rhel9/install/terraform/install_terraform.sh \
-                  /rhel9/install/telegram/install_telegram.sh \
                   /rhel9/install/thunderbird/install_thunderbird.sh \
-                  /rhel9/install/slack/install_slack.sh \
                   /rhel9/install/cleanup/cleanup.sh"
 
 # Copy install scripts
