@@ -20,12 +20,12 @@ target "desktop" {
     context = "."
     dockerfile = "containerfile-kasm-rhel-9-desktop"
     tags = ["${IMAGE}-desktop:${TAG}"]
-    inherits = ["base"]
+    depends_on = ["base"]
 }
 
 target "vs-code" {
     context = "."
     dockerfile = "containerfile-kasm-rhel-9-vs-code"
     tags = ["${IMAGE}-vs-code:${TAG}"]
-    inherits = ["base"]
+    depends_on = ["base"]
 }
