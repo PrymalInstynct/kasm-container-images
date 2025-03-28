@@ -27,7 +27,8 @@ ENV SKIP_CLEAN=true \
                   /rhel9/install/ansible/install_ansible.sh \
                   /rhel9/install/terraform/install_terraform.sh \
                   /rhel9/install/thunderbird/install_thunderbird.sh \
-                  /rhel9/install/cleanup/cleanup.sh"
+                  /rhel9/install/cleanup/cleanup.sh \
+                  /rhel9/install/cleanup/deep-clean.sh"
 
 # Copy install scripts
 COPY ./src/ $INST_DIR
