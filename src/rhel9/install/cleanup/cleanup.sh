@@ -4,8 +4,15 @@ set -ex
 # Distro package cleanup
 if [[ "${DISTRO}" == @(centos|oracle7) ]] ; then
   yum clean all
-elif [[ "${DISTRO}" == @(almalinux8|almalinux9|fedora37|fedora38|fedora39|fedora40|fedora41|oracle8|oracle9|rhel9|rockylinux8|rockylinux9) ]]; then
+elif [[ "${DISTRO}" == @(almalinux8|almalinux9|fedora37|fedora38|fedora39|fedora40|fedora41|oracle8|oracle9|rockylinux8|rockylinux9) ]]; then
   dnf clean all
+elif [[ "${DISTRO}" == @(rhel9) ]]; then
+  subscription-manager repos --disable rhel-9-for-$(arch)-baseos-rpms
+  subscription-manager repos --disable rhel-9-for-$(arch)-appstream-rpms
+  subscription-manager repos --disable codeready-builder-for-rhel-9-$(arch)-rpms
+  dnf -y remove epel-release
+  dnf clean all
+  rm -rf /etc/pki/entitlement/*.pem
 elif [ "${DISTRO}" == "opensuse" ]; then
   zypper clean --all
 elif [[ "${DISTRO}" == @(debian|kali|parrotos6|ubuntu) ]]; then
