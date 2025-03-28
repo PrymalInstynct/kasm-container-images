@@ -8,3 +8,4 @@ if [[ "${DISTRO}" == @(rhel9) ]]; then
   dnf -y remove epel-release
   dnf clean all
   rm -rf /etc/pki/entitlement/*.pem
+fi
