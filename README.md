@@ -35,7 +35,7 @@ docker image build -f containerfile-kasm-rhel-9-base -t kams-custom-images/kasm-
 docker image build -f containerfile-kasm-rhel-9-desktop -t kams-custom-images/kasm-rhel-9:desktop-dev -o type=registry .
 ```
 
-4. Build the Desktop image
+4. Build the VSCode image
 
 ```bash
 docker image build -f containerfile-kasm-rhel-9-vs-code -t kams-custom-images/kasm-rhel-9:vs-code-dev -o type=registry .
