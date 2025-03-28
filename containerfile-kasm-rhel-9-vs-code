@@ -28,7 +28,7 @@ RUN chmod 755 $STARTUPDIR/custom_startup.sh
 
 # Cleanup Image
 COPY ./src/rhel9/install/cleanup $INST_SCRIPTS/cleanup/
-RUN bash $INST_SCRIPTS/cleanup/deep-clean.sh && $INST_SCRIPTS/cleanup/cleanup.sh && rm -rf $INST_SCRIPTS/cleanup/
+RUN bash $INST_SCRIPTS/cleanup/cleanup.sh && $INST_SCRIPTS/cleanup/deep-clean.sh && rm -rf $INST_SCRIPTS/cleanup/
 
 # Update the desktop environment to be optimized for a single application
 RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
