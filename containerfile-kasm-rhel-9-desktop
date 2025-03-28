@@ -1,6 +1,7 @@
-ARG BASE_TAG="dev"
-ARG BASE_IMAGE="kasm-rhel-9-base"
-FROM $BASE_IMAGE:$BASE_TAG
+ARG BASE_REPO="prymalinstynct"
+ARG BASE_IMAGE="kasm-rhel-9"
+ARG BASE_TAG="base-dev"
+FROM $BASE_REPO/$BASE_IMAGE:$BASE_TAG
 
 USER root
 
