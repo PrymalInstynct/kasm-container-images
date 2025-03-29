@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 set -ex
 
-if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|almalinux8|fedora39|fedora40) ]]; then
-  dnf install -y ansible
-  if [ -z ${SKIP_CLEAN+x} ]; then
-    dnf clean all
-  fi
-else
-  yum install -y ansible
-  if [ -z ${SKIP_CLEAN+x} ]; then
-    yum clean all
-  fi
+if [[ "${DISTRO}" == @(rhel9) ]]; then
+  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  python3 get-pip.py
+  pip3 install ansible
 fi
