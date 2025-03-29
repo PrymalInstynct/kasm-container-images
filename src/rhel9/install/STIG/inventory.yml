@@ -3,7 +3,8 @@ container:
     ansible_connection: local
 
     # Begin failed or irrelevant when run in container #
-    rhel9stig_ssh_required: true
+    rhel9stig_ssh_required: false
+    rhel9stig_auditd_required: false
     rhel_09_211020: false # SSH
     rhel_09_211040: false # systemd | Enable systemd-journald
     rhel_09_211050: false # systemd | Disable Ctrl-Alt-Delete target
