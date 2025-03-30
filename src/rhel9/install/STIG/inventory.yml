@@ -103,11 +103,6 @@ container:
     rhel_09_411030: false # Interactive Users should normally not exist in a container image
     rhel_09_411035: false # Interactive Users should normally not exist in a container image
     rhel_09_411045: false # Interactive Users should normally not exist in a container image
-    rhel_09_412010: false # TMUX removed in V2R2
-    rhel_09_412015: false # TMUX removed in V2R2
-    rhel_09_412025: false # TMUX removed in V2R2
-    rhel_09_412030: false # TMUX removed in V2R2
-    rhel_09_412035: false # TMUX removed in V2R2
     rhel_09_431015: false # SELinux | SELinux enforcement comes from host OS
     rhel_09_431020: false # SELinux | SELinux enforcement comes from host OS
     rhel_09_431025: false # SELinux | SELinux enforcement comes from host OS
