@@ -195,6 +195,17 @@ RUN touch $STARTUPDIR/wm.log \
     && chown -R root:root /usr/local/bin \
     && chown 1000:root /var/run/pulse
 
+### Install Ansible
+COPY /src/rhel9/install/ansible $INST_SCRIPTS/ansible
+RUN bash $INST_SCRIPTS/ansible/install_ansible.sh
+
+### Apply RHEL9 STIG
+COPY /src/rhel9/install/STIG $INST_SCRIPTS/STIG
+RUN pushd $INST_SCRIPTS/STIG && bash ./rhel9-stig.sh && popd && rm -rf $INST_SCRIPTS/STIG
+
+### Uninstall Ansible
+RUN pip-autoremove -y ansible && rm -rf $INST_SCRIPTS/ansible/
+
 ### Cleanup job
 COPY ./src/rhel9/install/cleanup $INST_SCRIPTS/cleanup/
 RUN bash $INST_SCRIPTS/cleanup/cleanup.sh && rm -rf $INST_SCRIPTS/cleanup/

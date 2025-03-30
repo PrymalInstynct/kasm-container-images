@@ -1,12 +1,10 @@
 container:
   vars:
     ansible_connection: local
-
-    # Begin failed or irrelevant when run in container #
     rhel9stig_sshd_required: false
     rhel9stig_auditd_required: false
-    rhel_09_211020: false # SSH | The openssh-server package should never be installed in a container
     rhel_09_211040: false # systemd | Enable systemd-journald
+    rhel_09_211045: false # systemd | Set Ctrl-Alt-Delete burst action
     rhel_09_211050: false # systemd | Disable Ctrl-Alt-Delete target
     rhel_09_211055: false # systemd | Enable debug-shell
     rhel_09_212010: false # Grub | Managed by host OS
@@ -38,12 +36,12 @@ container:
     rhel_09_213105: false # Sysctl | Managed by Host OS
     rhel_09_213110: false # Grub | Managed by host OS
     rhel_09_213115: false # systemd | Disable kdump
-    rhel_09_215075: false # openssl-pkcs11 | Extra Packages should not need to be installed in a container image
-    rhel_09_215080: false # gnutls-utils | Extra Packages should not need to be installed in a container image
-    rhel_09_215085: false # nss-tools | Extra Packages should not need to be installed in a container image
-    rhel_09_215090: false # rng-tools | Extra Packages should not need to be installed in a container image
-    rhel_09_215095: false # s-nail | Extra Packages should not need to be installed in a container image
-    rhel_09_231040: false # Disable autofs
+    rhel_09_215075: false # openssl-pkcs11 | Packages should not be installed in a container image unless required for the container or its application to function
+    rhel_09_215080: false # gnutls-utils | Packages should not be installed in a container image unless required for the container or its application to function
+    rhel_09_215085: false # nss-tools | Packages should not be installed in a container image unless required for the container or its application to function
+    rhel_09_215090: false # rng-tools | Packages should not be installed in a container image unless required for the container or its application to function
+    rhel_09_215095: false # s-nail | Packages should not be installed in a container image unless required for the container or its application to function
+    rhel_09_231040: false # systemd | Disable autofs
     rhel_09_231110: false # /dev/shm Mount Permissions
     rhel_09_231115: false # /dev/shm Mount Permissions
     rhel_09_231120: false # /dev/shm Mount Permissions
@@ -95,36 +93,6 @@ container:
     rhel_09_254030: false # Sysctl | Managed by Host OS
     rhel_09_254035: false # Sysctl | Managed by Host OS
     rhel_09_254040: false # Sysctl | Managed by Host OS
-    rhel_09_255010: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255015: false # systemd | Enable sshd
-    rhel_09_255025: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255030: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255035: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255040: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255045: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255050: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255055: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255060: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255080: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255085: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255090: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255095: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255100: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255105: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255110: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255115: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255120: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255125: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255130: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255135: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255140: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255145: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255150: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255155: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255160: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255165: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255170: false # SSH | The openssh-server package should never be installed in a container
-    rhel_09_255175: false # SSH | The openssh-server package should never be installed in a container
     rhel_09_291010: false # Modprobe | Managed by Host OS
     rhel_09_291015: false # USBGuard | USBGuard is unneeded in a container image
     rhel_09_291020: false # USBGuard | USBGuard is unneeded in a container image
@@ -144,12 +112,12 @@ container:
     rhel_09_431020: false # SELinux | SELinux enforcement comes from host OS
     rhel_09_431025: false # SELinux | SELinux enforcement comes from host OS
     rhel_09_431030: false # SELinux | SELinux enforcement comes from host OS
-    rhel_09_432010: false # Sudo | Allowing for elevated priviledge in a container is never best practive
-    rhel_09_432015: false # Sudo | Allowing for elevated priviledge in a container is never best practive
-    rhel_09_432020: false # Sudo | Allowing for elevated priviledge in a container is never best practive
-    rhel_09_432025: false # Sudo | Allowing for elevated priviledge in a container is never best practive
-    rhel_09_432030: false # Sudo | Allowing for elevated priviledge in a container is never best practive
-    rhel_09_432035: false # Sudo | Allowing for elevated priviledge in a container is never best practive
+    rhel_09_432010: false # Sudo | Allowing for elevated privilege in a container is never best practice
+    rhel_09_432015: false # Sudo | Allowing for elevated privilege in a container is never best practice
+    rhel_09_432020: false # Sudo | Allowing for elevated privilege in a container is never best practice
+    rhel_09_432025: false # Sudo | Allowing for elevated privilege in a container is never best practice
+    rhel_09_432030: false # Sudo | Allowing for elevated privilege in a container is never best practice
+    rhel_09_432035: false # Sudo | Allowing for elevated privilege in a container is never best practice
     rhel_09_433010: false # fapolicy | The nature of a container makes this tool irrelevant
     rhel_09_433015: false # fapolicy | The nature of a container makes this tool irrelevant
     rhel_09_651010: false # AIDE | The nature of a container makes this tool irrelevant
@@ -169,94 +137,16 @@ container:
     rhel_09_652050: false # rsyslog | Auditing is handled through the container host OS, sidecar, daemonset
     rhel_09_652055: false # rsyslog | Auditing is handled through the container host OS, sidecar, daemonset
     rhel_09_652060: false # rsyslog | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653010: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653015: false # systemd | Enable auditd
-    rhel_09_653020: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653025: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653030: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653035: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653040: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653045: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653050: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653055: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653060: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653065: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653070: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653075: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653080: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653085: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653090: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653095: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653100: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653105: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653110: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_653115: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
     rhel_09_653120: false # Grub | Managed by host OS
-    rhel_09_653130: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654010: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654015: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654020: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654025: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654030: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654035: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654040: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654045: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654050: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654055: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654060: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654065: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654070: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654075: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654080: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654085: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654090: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654095: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654100: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654105: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654110: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654115: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654120: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654125: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654130: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654135: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654140: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654145: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654150: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654155: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654160: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654165: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654170: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654175: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654180: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654185: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654190: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654195: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654200: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654205: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654210: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654215: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654220: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654225: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654230: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654235: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654240: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654245: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654250: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654255: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654260: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654265: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654270: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
-    rhel_09_654275: false # Auditd | Auditing is handled through the container host OS, sidecar, daemonset
     rhel_09_671010: false # FIPS | FIPS must also be enabled on the Host to allow FIPS to work inside of a container
     rhel_09_671015: false # FIPS | FIPS must also be enabled on the Host to allow FIPS to work inside of a container
     rhel_09_671020: false # FIPS | FIPS must also be enabled on the Host to allow FIPS to work inside of a container
     rhel_09_671025: false # FIPS | FIPS must also be enabled on the Host to allow FIPS to work inside of a container
-    rhel_09_672020: false # Crypto | Kerberos is not required in normal container image builds
-    rhel_09_672025: false # Crypto | Kerberos is not required in normal container image builds
-    rhel_09_672035: false # Crypto | OpenSSL is not required in normal container image builds
-    rhel_09_672040: false # Crypto | OpenSSL is not required in normal container image builds
-    rhel_09_672050: false # Crypto | Bind is not required in normal container image builds    
-    # End failed or irrelevant when run in container #
+    rhel_09_672020: false # Crypto | Kerberos is not required in base container image builds
+    rhel_09_672025: false # Crypto | Kerberos is not required in base container image builds
+    rhel_09_672035: false # Crypto | OpenSSL is not required in base container image builds
+    rhel_09_672040: false # Crypto | OpenSSL is not required in base container image builds
+    rhel_09_672050: false # Crypto | Bind is not required in base container image builds    
   hosts:
     localhost:
       ansible_host: 127.0.0.1
