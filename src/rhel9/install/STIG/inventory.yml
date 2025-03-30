@@ -93,6 +93,27 @@ container:
     rhel_09_254030: false # Sysctl | Managed by Host OS
     rhel_09_254035: false # Sysctl | Managed by Host OS
     rhel_09_254040: false # Sysctl | Managed by Host OS
+    rhel_09_271010: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271015: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271020: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271025: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271030: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271035: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271040: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271045: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271050: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271055: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271060: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271065: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271070: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271075: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271080: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271085: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271095: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271100: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271105: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271110: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
+    rhel_09_271115: false # GUI | When installing a GUI into a container it is not possible to update the dconf DB because it is relient other subsystems that are not present in a container
     rhel_09_291010: false # Modprobe | Managed by Host OS
     rhel_09_291015: false # USBGuard | USBGuard is unneeded in a container image
     rhel_09_291020: false # USBGuard | USBGuard is unneeded in a container image
