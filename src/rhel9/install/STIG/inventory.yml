@@ -3,13 +3,13 @@ container:
     ansible_connection: local
 
     # Begin failed or irrelevant when run in container #
-    rhel9stig_ssh_required: false
+    rhel9stig_sshd_required: false
     rhel9stig_auditd_required: false
     rhel_09_211020: false # SSH | The openssh-server package should never be installed in a container
     rhel_09_211040: false # systemd | Enable systemd-journald
     rhel_09_211050: false # systemd | Disable Ctrl-Alt-Delete target
     rhel_09_211055: false # systemd | Enable debug-shell
-    rhel_09_212010: false # Grub | Managed by host OS | GRUB managed by host OS
+    rhel_09_212010: false # Grub | Managed by host OS
     rhel_09_212015: false # Grub | Managed by host OS
     rhel_09_212020: false # Grub | Managed by host OS
     rhel_09_212025: false # Grub | Managed by host OS
