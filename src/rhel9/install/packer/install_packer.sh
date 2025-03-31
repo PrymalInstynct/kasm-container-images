@@ -27,4 +27,4 @@ else
     yum clean all
   fi
 fi
-cp 00-alias.sh /etc/profile.d/
+cp $INST_DIR/rhel9/install/packer/00-alias.sh /etc/profile.d/
