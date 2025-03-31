@@ -25,5 +25,8 @@ EOF
 xdg-desktop-menu install $DESKTOP_FILE
 xdg-icon-resource install --size 128 "$PRG_INSTALL/$ICON_NAME.svg" $ICON_NAME
 
+chmod +x $HOME/Desktop/jetbrains-idea.desktop
+chown 1000:1000 $HOME/Desktop/jetbrains-idea.desktop
+
 rm $DESKTOP_FILE
 rm -R $TMP_DIR
