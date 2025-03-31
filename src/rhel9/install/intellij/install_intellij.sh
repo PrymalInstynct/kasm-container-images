@@ -9,5 +9,7 @@ if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|
   curl -fSL https://download.jetbrains.com/idea/ideaIC-2024.3.5.tar.gz -o ideaIC.tar.gz
   mkdir /opt/idea-IC
   tar xvzf ideaIC.tar.gz -C /opt/idea-IC --strip-components=1
-  wget -O /opt/idea-IC/jetbrains-idea.svg https://resources.jetbrains.com/help/img/idea/2024.3/product.idea.svg
+  cp $INST_DIR/rhel9/install/intellij/jetbrains-idea.desktop /usr/share/applications/
+  cp $INST_DIR/rhel9/install/intellij/jetbrains-idea.desktop $HOME/Desktop/
+  rm -f ideaIC.tar.gz
 fi
