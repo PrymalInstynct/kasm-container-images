@@ -27,6 +27,7 @@ ENV SKIP_CLEAN=true \
                   /rhel9/install/ansible/install_ansible.sh \
                   /rhel9/install/terraform/install_terraform.sh \
                   /rhel9/install/packer/install_packer.sh \
+                  /rhel9/install/kubectl/install_kubectl.sh \
                   /rhel9/install/cleanup/cleanup.sh \
                   /rhel9/install/cleanup/deep-clean.sh"
 
