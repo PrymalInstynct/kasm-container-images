@@ -6,7 +6,7 @@ FROM $BASE_REPO/$BASE_IMAGE:$BASE_TAG
 ENV DISTRO=rhel9
 ENV HOME=/home/kasm-default-profile
 ENV STARTUPDIR=/dockerstartup
-ENV INST_SCRIPTS=$STARTUPDIR/install
+ENV INST_DIR=$STARTUPDIR/install
 ENV DONT_PROMPT_WSL_INSTALL="No_Prompt_please"
 WORKDIR $HOME
 
@@ -15,16 +15,16 @@ USER root
 ######### Customize Container Here ###########
 
 # Install Git
-COPY ./src/rhel9/install/tools $INST_SCRIPTS/tools/
-RUN bash $INST_SCRIPTS/tools/install_tools_deluxe.sh && rm -rf $INST_SCRIPTS/tools/
+COPY ./src/rhel9/install/tools $INST_DIR/tools/
+RUN bash $INST_DIR/tools/install_tools_deluxe.sh && rm -rf $INST_DIR/tools/
 
 # Install Google Chrome
-COPY ./src/rhel9/install/chrome $INST_SCRIPTS/chrome/
-RUN bash $INST_SCRIPTS/chrome/install_chrome.sh && rm -rf $INST_SCRIPTS/chrome/
+COPY ./src/rhel9/install/chrome $INST_DIR/chrome/
+RUN bash $INST_DIR/chrome/install_chrome.sh && rm -rf $INST_DIR/chrome/
 
 # Install VSCode
-COPY ./src/rhel9/install/vs_code $INST_SCRIPTS/vs_code/
-RUN bash $INST_SCRIPTS/vs_code/install_vs_code.sh  && rm -rf $INST_SCRIPTS/vs_code/
+COPY ./src/rhel9/install/vs_code $INST_DIR/vs_code/
+RUN bash $INST_DIR/vs_code/install_vs_code.sh  && rm -rf $INST_DIR/vs_code/
 
 # Configure Custom Startup
 COPY ./src/rhel9/install/vs_code/custom_startup.sh $STARTUPDIR/custom_startup.sh
@@ -37,10 +37,10 @@ RUN cp /usr/share/backgrounds/bg_kasm.png /usr/share/backgrounds/bg_default.png
 RUN dnf remove -y xfce4-panel
 
 # Cleanup Image
-COPY ./src/rhel9/install/cleanup $INST_SCRIPTS/cleanup/
-RUN bash $INST_SCRIPTS/cleanup/cleanup.sh
-RUN bash $INST_SCRIPTS/cleanup/deep-clean.sh
-RUN rm -rf $INST_SCRIPTS/cleanup/
+COPY ./src/rhel9/install/cleanup $INST_DIR/cleanup/
+RUN bash $INST_DIR/cleanup/cleanup.sh
+RUN bash $INST_DIR/cleanup/deep-clean.sh
+RUN rm -rf $INST_DIR/cleanup/
 
 ######### End Customizations ###########
 
