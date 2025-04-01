@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -ex
-START_COMMAND="/opt/idea-IC/idea.sh"
+START_COMMAND="/opt/idea-IC/bin/idea"
 PGREP="idea"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="JetBrains Intellij"
