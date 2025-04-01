@@ -23,9 +23,7 @@ ENV SKIP_CLEAN=true \
                   /rhel9/install/vs_code/install_vs_code.sh \
                   /rhel9/install/intellij/install_intellij.sh \
                   /rhel9/install/intellij/create_shortcut.sh \
-                  /rhel9/install/remmina/install_remmina.sh \
-                  /rhel9/install/libre_office/install_libre_office.sh \
-                  /rhel9/install/gimp/install_gimp.sh \
+                  /rhel9/install/only_office/install_only_office.sh \
                   /rhel9/install/ansible/install_ansible.sh \
                   /rhel9/install/terraform/install_terraform.sh \
                   /rhel9/install/packer/install_packer.sh \
