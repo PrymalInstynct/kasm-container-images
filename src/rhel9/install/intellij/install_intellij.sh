@@ -10,5 +10,6 @@ if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|
   mkdir /opt/idea-IC
   tar xvzf ideaIC.tar.gz -C /opt/idea-IC --strip-components=1
   cp -r $INST_SCRIPTS/rhel9/install/intellij/JetBrains $HOME/.config/
+  chown 1000:1000 $HOME/.config/JetBrains
   rm -f ideaIC.tar.gz
 fi
