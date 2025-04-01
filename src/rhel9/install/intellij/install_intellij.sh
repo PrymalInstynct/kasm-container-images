@@ -14,7 +14,12 @@ if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|
   mkdir -p $HOME/.jdks/openjdk-24
   tar xzf openjdk-24_linux-x64_bin.tar.gz -C $HOME/.jdks/openjdk-24 --strip-components=1
   cp -r $INST_DIR/intellij/JetBrains $HOME/.config/
+  find $HOME/.config -type d | xargs chmod 700
+  find $HOME/.config -type f | xargs chmod o-rwx,g-rwx
+  find $HOME/.jdks -type d | xargs chmod 700
+  find $HOME/.jdks -type f | xargs chmod o-rwx,g-rwx
   chown 1000:1000 $HOME/.config/JetBrains
+  chown 1000:1000 $HOME/.jdks
   rm -f ideaIC.tar.gz
   rm -f openjdk-24_linux-x64_bin.tar.gz
 fi
