@@ -14,6 +14,10 @@ USER root
 
 ######### Customize Container Here ###########
 
+# Install Git
+COPY ./src/rhel9/install/tools $INST_SCRIPTS/tools/
+RUN bash $INST_SCRIPTS/tools/install_tools_deluxe.sh && rm -rf $INST_SCRIPTS/tools/
+
 # Install Google Chrome
 COPY ./src/rhel9/install/chrome $INST_SCRIPTS/chrome/
 RUN bash $INST_SCRIPTS/chrome/install_chrome.sh && rm -rf $INST_SCRIPTS/chrome/
