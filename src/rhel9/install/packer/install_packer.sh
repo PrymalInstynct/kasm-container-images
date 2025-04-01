@@ -9,6 +9,7 @@ rpm --import https://rpm.releases.hashicorp.com/gpg
 if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|almalinux8) ]]; then
   dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
   dnf install -y packer
+  echo "alias packer='/usr/bin/packer'" >> $HOME/.bashrc
   if [ -z ${SKIP_CLEAN+x} ]; then
     dnf clean all
   fi
@@ -17,14 +18,15 @@ elif [[ "${DISTRO}" == @(fedora39|fedora40) ]]; then
   # use fedora40 hashicorp packages for packer
   sed -i 's/$releasever/40/g' /etc/yum.repos.d/hashicorp.repo
   dnf install -y packer
+  echo "alias packer='/usr/bin/packer'" >> $HOME/.bashrc
   if [ -z ${SKIP_CLEAN+x} ]; then
     dnf clean all
   fi
 else
   yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
   yum install -y packer
+  echo "alias packer='/usr/bin/packer'" >> $HOME/.bashrc
   if [ -z ${SKIP_CLEAN+x} ]; then
     yum clean all
   fi
 fi
-cp $INST_DIR/rhel9/install/packer/00-alias.sh /etc/profile.d/
