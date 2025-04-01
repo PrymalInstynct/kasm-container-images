@@ -7,19 +7,19 @@ if [ "$ARCH" == "arm64" ] ; then
   exit 0
 fi
 
-curl -L -o only_office.rpm "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.$(arch).rpm"
 if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|almalinux8|fedora39|fedora40) ]]; then
-  dnf localinstall -y only_office.rpm
+  dnf install -y https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm --nogpgcheck
+  dnf install -y onlyoffice-desktopeditors
   if [ -z ${SKIP_CLEAN+x} ]; then
     dnf clean all
   fi
 else
-  yum localinstall -y only_office.rpm
+  yum install -y https://download.onlyoffice.com/repo/centos/main/noarch/onlyoffice-repo.noarch.rpm --nogpgcheck
+  yum install -y onlyoffice-desktopeditors
   if [ -z ${SKIP_CLEAN+x} ]; then
     yum clean all
   fi
 fi
-rm -rf only_office.rpm
 
 cp /usr/share/applications/onlyoffice-desktopeditors.desktop $HOME/Desktop
 sed -i 's/ONLYOFFICE Desktop Editors/ONLYOFFICE/g' $HOME/Desktop/onlyoffice-desktopeditors.desktop
