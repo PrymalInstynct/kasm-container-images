@@ -7,4 +7,5 @@ if [[ "${DISTRO}" == @(rhel9) ]]; then
   python3 get-pip.py
   pip3 install ansible
   pip3 install pip-autoremove
+  rm -f get-pip.py
 fi
