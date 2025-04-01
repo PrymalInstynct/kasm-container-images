@@ -22,6 +22,7 @@ ENV SKIP_CLEAN=true \
                   /rhel9/install/sublime_text/install_sublime_text.sh \
                   /rhel9/install/vs_code/install_vs_code.sh \
                   /rhel9/install/intellij/install_intellij.sh \
+                  /rhel9/install/intellij/create_shortcut.sh \
                   /rhel9/install/remmina/install_remmina.sh \
                   /rhel9/install/libre_office/install_libre_office.sh \
                   /rhel9/install/gimp/install_gimp.sh \
