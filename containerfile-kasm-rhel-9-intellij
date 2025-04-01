@@ -1,0 +1,45 @@
+ARG BASE_REPO="prymalinstynct"
+ARG BASE_IMAGE="kasm-rhel-9"
+ARG BASE_TAG="base-dev"
+FROM $BASE_REPO/$BASE_IMAGE:$BASE_TAG
+
+ENV DISTRO=rhel9
+ENV HOME=/home/kasm-default-profile
+ENV STARTUPDIR=/dockerstartup
+ENV INST_SCRIPTS=$STARTUPDIR/install
+ENV DONT_PROMPT_WSL_INSTALL="No_Prompt_please"
+WORKDIR $HOME
+
+USER root
+
+######### Customize Container Here ###########
+
+# Install Intellij
+COPY ./src/rhel9/install/intellij $INST_SCRIPTS/intellij/
+RUN bash $INST_SCRIPTS/intellij/install_intellij.sh  && rm -rf $INST_SCRIPTS/intellij/
+
+# Configure Custom Startup
+COPY ./src/rhel9/install/intellij/custom_startup.sh $STARTUPDIR/custom_startup.sh
+RUN chmod +x $STARTUPDIR/custom_startup.sh
+RUN chmod 755 $STARTUPDIR/custom_startup.sh
+
+# Update the desktop environment to be optimized for a single application
+RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
+RUN cp /usr/share/backgrounds/bg_kasm.png /usr/share/backgrounds/bg_default.png
+RUN dnf remove -y xfce4-panel
+
+# Cleanup Image
+COPY ./src/rhel9/install/cleanup $INST_SCRIPTS/cleanup/
+RUN bash $INST_SCRIPTS/cleanup/cleanup.sh
+RUN bash $INST_SCRIPTS/cleanup/deep-clean.sh
+RUN rm -rf $INST_SCRIPTS/cleanup/
+
+######### End Customizations ###########
+
+RUN chown 1000:0 $HOME
+
+ENV HOME=/home/kasm-user
+WORKDIR $HOME
+RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+
+USER 1000
